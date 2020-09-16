@@ -1,0 +1,3791 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'></meta>
+<style>body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 200;
+}
+
+.back-link {
+  font-size: small;
+}
+
+table {
+  margin: 5px;
+}
+
+div.date-test-ran {
+  font-size: small;
+  font-style: italic;
+}
+
+table.features-table {
+  width: 800px;
+}
+
+table.summary-table {
+  width: 800px;
+  text-align: left;
+  font-weight: bold;
+  font-size: small;
+}
+
+table.summary-table th {
+  background: lightblue;
+  padding: 6px;
+}
+
+table.summary-table td {
+  background: #E0E0E0;
+  padding: 6px;
+}
+
+pre.title {
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1px;
+  color: #333;
+}
+
+pre.narrative {
+  font-family: inherit;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 23px;
+  letter-spacing: -1px;
+  color: #333;
+}
+
+.feature-description {
+  font-size: large;
+  background: lightblue;
+  padding: 12px;
+}
+
+.feature-toc-error {
+  color: #F89A4F;
+}
+
+.feature-toc-failure {
+  color: #FF8080;
+}
+
+.feature-toc-ignored {
+  color: lightgray;
+}
+
+.feature-toc-pass {
+  color: green;
+}
+
+.feature-description.error {
+  background: #F89A4F;
+}
+
+.feature-description.failure {
+  background: #FF8080;
+}
+
+.feature-description.ignored {
+  background: lightgray;
+}
+
+.feature-description.ignored .reason {
+  color: black;
+  font-style: italic;
+  font-size: small;
+}
+
+div.extra-info {
+  font-size: small;
+}
+
+div.spec-headers {
+  margin: 4px;
+  font-style: italic;
+}
+
+div.spec-header {
+}
+
+div.issues {
+  margin-top: 6px;
+  padding: 10px 5px 5px 5px;
+  background-color: lemonchiffon;
+  color: black;
+  font-weight: 500;
+  font-size: small;
+  max-width: 50%;
+}
+
+div.pending-feature {
+  background-color: dodgerblue;
+  color: white;
+  margin-top: 6px;
+  padding: 5px;
+  text-align: center;
+  font-size: small;
+  max-width: 120px;
+}
+
+div.problem-description {
+  padding: 10px;
+  background: pink;
+  border-radius: 10px;
+}
+
+div.problem-header {
+  font-weight: bold;
+  color: red;
+}
+
+div.problem-list {
+
+}
+
+table.ex-table th {
+  background: lightblue;
+  padding: 0px 5px 0px 5px;
+}
+
+table.ex-table td {
+  background: #E0E0E0;
+  padding: 0px 5px 0px 5px;
+}
+
+table td {
+  min-width: 50px;
+}
+
+col.block-kind-col {
+  width: 70px;
+}
+
+span.spec-header {
+  font-weight: bold;
+}
+
+div.spec-text {
+  /*color: green;*/
+}
+
+div.spec-status {
+  font-style: italic;
+}
+
+.ignored {
+  color: gray;
+}
+
+td.ex-result {
+  text-align: center;
+  background: white !important;
+}
+
+.ex-pass {
+  color: darkgreen;
+}
+
+.ex-fail {
+  color: red;
+  font-weight: bold;
+}
+
+div.block-kind {
+  margin: 2px;
+  font-style: italic;
+}
+
+div.block-text {
+
+}
+
+pre.block-source {
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+pre.block-source.error {
+  background-color: pink;
+  color: red;
+  font-weight: bold;
+}
+
+pre.block-source.pre-error {
+
+}
+
+pre.block-source.before-error {
+  margin-bottom: -14px;
+}
+
+pre.block-source.after-error {
+  color: gray;
+  margin-top: -14px;
+}
+
+pre.block-source.post-error {
+  color: gray;
+}
+
+div.footer {
+  text-align: center;
+  font-size: small;
+}
+</style>
+</head>
+<body>
+<h2>Report for nl.quintor.solitaire.game.CardMoveChecksSpec</h2>
+<hr></hr>
+<div class='back-link'>
+<a href='index.html'>&lt;&lt; Back</a>
+</div>
+<div class='summary-report'>
+<h3>Summary:</h3>
+<div class='date-test-ran'>Created on Mon Sep 14 17:49:15 CEST 2020 by dave</div>
+<table class='summary-table'>
+<thead>
+<th>Executed features</th>
+<th>Failures</th>
+<th>Errors</th>
+<th>Skipped</th>
+<th>Success rate</th>
+<th>Time</th>
+</thead>
+<tbody>
+<tr>
+<td>57</td>
+<td>22</td>
+<td>0</td>
+<td>0</td>
+<td>61,40%</td>
+<td>0,126 seconds</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Features:</h3>
+<table class='features-table'>
+<colgroup>
+<col class='block-kind-col'></col>
+<col class='block-text-col'></col>
+</colgroup>
+<tbody>
+<ul id='toc'>
+<li>
+<a href='#2014265853' class='feature-toc-failure'>Invalid input calling checkPlayerInput whith [M, Z, G] will throw MoveException with message |Invalid Move syntax. "Z" is not a valid source location.
+See H̲elp for instructions.| when testing: Invalid source move</a>
+</li>
+<li>
+<a href='#-239794351' class='feature-toc-failure'>Invalid input calling checkPlayerInput whith [M, O, Z] will throw MoveException with message |Invalid Move syntax. "Z" is not a valid destination location.
+See H̲elp for instructions.| when testing: Invalid destination move</a>
+</li>
+<li>
+<a href='#-899869209' class='feature-toc-pass'>Valid moves will not throw exceptions testing: Valid move between columns</a>
+</li>
+<li>
+<a href='#-2033957909' class='feature-toc-pass'>Valid moves will not throw exceptions testing: Valid move between column and stack</a>
+</li>
+<li>
+<a href='#1361829503' class='feature-toc-pass'>Valid moves will not throw exceptions testing: Valid move between stock and stack</a>
+</li>
+<li>
+<a href='#-1195297217' class='feature-toc-pass'>Valid moves will not throw exceptions testing: Valid move between stock and column</a>
+</li>
+<li>
+<a href='#-1915023758' class='feature-toc-pass'>Valid input calling deckLevelChecks will not throw exception testing: Column source and Stack destination</a>
+</li>
+<li>
+<a href='#-502910678' class='feature-toc-pass'>Valid input calling deckLevelChecks will not throw exception testing: Column source and destination</a>
+</li>
+<li>
+<a href='#1747921210' class='feature-toc-pass'>Valid input calling deckLevelChecks will not throw exception testing: Stack source and Column destination</a>
+</li>
+<li>
+<a href='#1017207569' class='feature-toc-failure'>Calling deckLevelChecks with same source and destination will throw exception</a>
+</li>
+<li>
+<a href='#-246061117' class='feature-toc-failure'>Invalid input calling deckLevelChecks will throw exception with message: |You can't move a card from an empty deck| testing: Moving cards from empty deck should not be possible</a>
+</li>
+<li>
+<a href='#934029714' class='feature-toc-failure'>Invalid input calling deckLevelChecks will throw exception with message: |You can't move cards to the stock| testing: Moving cards to stock is not allowed</a>
+</li>
+<li>
+<a href='#-433841838' class='feature-toc-failure'>Invalid input calling deckLevelChecks will throw exception with message: |You can't move more than 1 card at a time to a Stack Pile| testing: Moving multiple cards is not allowed</a>
+</li>
+<li>
+<a href='#1337271653' class='feature-toc-failure'>Invalid input calling deckLevelChecks will throw exception with message: |You can't move an invisible card| testing: Moving invisible cards is not allowed</a>
+</li>
+<li>
+<a href='#-588163515' class='feature-toc-pass'>valid input calling deckLevelChecks does not throw exceptions testing: Moving card from column to stack should be allowed</a>
+</li>
+<li>
+<a href='#-1473637591' class='feature-toc-pass'>valid input calling deckLevelChecks does not throw exceptions testing: Moving card from column to column should be allowed</a>
+</li>
+<li>
+<a href='#-422539479' class='feature-toc-pass'>valid input calling deckLevelChecks does not throw exceptions testing: Moving card from stock to column should be allowed</a>
+</li>
+<li>
+<a href='#726494156' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message Target deck is neither Stack nor Column. testing: Moving card to deck should only be allowed to Stack or column deck</a>
+</li>
+<li>
+<a href='#1545227933' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message An Ace has to be the first card of a Stack Pile testing: Moving card not being an ace to an empty stack</a>
+</li>
+<li>
+<a href='#-1650367749' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message Stack Piles hold same-suit cards of increasing Rank from Ace to King testing: Moving card to stack should be increasing</a>
+</li>
+<li>
+<a href='#-778524425' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message Stack Piles can only contain same-suit cards testing: Moving card to stack should be same suit</a>
+</li>
+<li>
+<a href='#-1883947393' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message A King has to be the first card of a Column testing: Moving card to empty column can only be a King</a>
+</li>
+<li>
+<a href='#-846564044' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message Column cards have te alternate colors (red and black) testing: Moving card to column must be opposite suit</a>
+</li>
+<li>
+<a href='#2046670055' class='feature-toc-failure'>Invalid input calling cardLevelCheck will throw exception with message Columns hold alternating-color cards of decreasing rank from King to Two testing: Moving card to column must be in descending rank</a>
+</li>
+<li>
+<a href='#104029933' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : Ace should be allowed on empty stack</a>
+</li>
+<li>
+<a href='#-1813454412' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : two should be allowed in stack containing ace</a>
+</li>
+<li>
+<a href='#2104431272' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : King should be allowed as first card in a column deck</a>
+</li>
+<li>
+<a href='#-748145887' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with Diamond card should allow club card with decreased value of one</a>
+</li>
+<li>
+<a href='#-1803715676' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with Diamond card should allow spade card with decreased value of one</a>
+</li>
+<li>
+<a href='#-2119430215' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with hearts card should allow spade card with decreased value of one</a>
+</li>
+<li>
+<a href='#-1866708884' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with hearts card should allow club card with decreased value of one</a>
+</li>
+<li>
+<a href='#-2070555181' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with clubs card should allow hearts card with decreased value of one</a>
+</li>
+<li>
+<a href='#-853058964' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with clubs card should allow diamond card with decreased value of one</a>
+</li>
+<li>
+<a href='#-1620200837' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with spade card should allow hearts card with decreased value of one</a>
+</li>
+<li>
+<a href='#223023812' class='feature-toc-pass'>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with spade card should allow diamond card with decreased value of one</a>
+</li>
+<li>
+<a href='#-1418442217' class='feature-toc-failure'>Given the cards DIAMONDS JACK, DIAMONDS FIVE the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#-1407416667' class='feature-toc-failure'>Given the cards DIAMONDS JACK, HEARTS FIVE the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#2055444140' class='feature-toc-pass'>Given the cards DIAMONDS JACK, SPADES SEVEN the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#-1586016058' class='feature-toc-pass'>Given the cards DIAMONDS JACK, CLUBS FIVE the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#-2027240489' class='feature-toc-failure'>Given the cards HEARTS TWO, HEARTS KING the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#860853641' class='feature-toc-failure'>Given the cards HEARTS TWO, DIAMONDS KING the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#-988165319' class='feature-toc-pass'>Given the cards HEARTS TWO, SPADES KING the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#-980826014' class='feature-toc-pass'>Given the cards HEARTS TWO, CLUBS KING the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#1582329085' class='feature-toc-failure'>Given the cards CLUBS FIVE, CLUBS ACE the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#-346717924' class='feature-toc-failure'>Given the cards CLUBS FIVE, SPADES ACE the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#-131897242' class='feature-toc-pass'>Given the cards CLUBS FIVE, DIAMONDS ACE the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#-682645196' class='feature-toc-pass'>Given the cards CLUBS FIVE, HEARTS ACE the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#2104275999' class='feature-toc-failure'>Given the cards SPADES TEN, SPADES QUEEN the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#-530127508' class='feature-toc-failure'>Given the cards SPADES TEN, CLUBS QUEEN the method opposingCards will return false</a>
+</li>
+<li>
+<a href='#471423811' class='feature-toc-pass'>Given the cards SPADES TEN, DIAMONDS QUEEN the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#1116722705' class='feature-toc-pass'>Given the cards SPADES TEN, HEARTS QUEEN the method opposingCards will return true</a>
+</li>
+<li>
+<a href='#-1904487444' class='feature-toc-pass'>Given SPADES TEN redSuit should return false</a>
+</li>
+<li>
+<a href='#-373762635' class='feature-toc-pass'>Given CLUBS TEN redSuit should return false</a>
+</li>
+<li>
+<a href='#339708564' class='feature-toc-pass'>Given DIAMONDS TEN redSuit should return true</a>
+</li>
+<li>
+<a href='#-1560151866' class='feature-toc-pass'>Given HEARTS TEN redSuit should return true</a>
+</li>
+<li>
+<a href='#-1892586297' class='feature-toc-pass'>Given a JOKER JOKER_BLACK redSuit should throw a exception</a>
+</li>
+<li>
+<a href='#832630069' class='feature-toc-pass'>Given a JOKER JOKER_RED redSuit should throw a exception</a>
+</li>
+</ul>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='2014265853'>
+<span>Invalid input calling checkPlayerInput whith [M, Z, G] will throw MoveException with message |Invalid Move syntax. "Z" is not a valid source location.
+See H̲elp for instructions.| when testing: Invalid source move</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>testcase</th>
+<th class='ex-header'>input</th>
+<th class='ex-header'>exception</th>
+<th class='ex-header'>message</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>Invalid source move</td>
+<td class='ex-value'>[M, Z, G]</td>
+<td class='ex-value'>class nl.quintor.solitaire.game.moves.ex.MoveException</td>
+<td class='ex-value'>Invalid Move syntax. "Z" is not a valid source location.
+See H̲elp for instructions.</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-239794351'>
+<span>Invalid input calling checkPlayerInput whith [M, O, Z] will throw MoveException with message |Invalid Move syntax. "Z" is not a valid destination location.
+See H̲elp for instructions.| when testing: Invalid destination move</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>testcase</th>
+<th class='ex-header'>input</th>
+<th class='ex-header'>exception</th>
+<th class='ex-header'>message</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>Invalid destination move</td>
+<td class='ex-value'>[M, O, Z]</td>
+<td class='ex-value'>class nl.quintor.solitaire.game.moves.ex.MoveException</td>
+<td class='ex-value'>Invalid Move syntax. "Z" is not a valid destination location.
+See H̲elp for instructions.</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-899869209'>
+<span>Valid moves will not throw exceptions testing: Valid move between columns</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>testcase</th>
+<th class='ex-header'>input</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>Valid move between columns</td>
+<td class='ex-value'>[M, A2, B]</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2033957909'>
+<span>Valid moves will not throw exceptions testing: Valid move between column and stack</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>testcase</th>
+<th class='ex-header'>input</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>Valid move between column and stack</td>
+<td class='ex-value'>[M, C10, SB]</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1361829503'>
+<span>Valid moves will not throw exceptions testing: Valid move between stock and stack</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>testcase</th>
+<th class='ex-header'>input</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>Valid move between stock and stack</td>
+<td class='ex-value'>[M, O, SC]</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1195297217'>
+<span>Valid moves will not throw exceptions testing: Valid move between stock and column</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>testcase</th>
+<th class='ex-header'>input</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>Valid move between stock and column</td>
+<td class='ex-value'>[M, O, G]</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1915023758'>
+<span>Valid input calling deckLevelChecks will not throw exception testing: Column source and Stack destination</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>sourceType</th>
+<th class='ex-header'>destinationType</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♥ A, ♦ A]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>COLUMN</td>
+<td class='ex-value'>STACK</td>
+<td class='ex-value'>1</td>
+<td class='ex-value'>Column source and Stack destination</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-502910678'>
+<span>Valid input calling deckLevelChecks will not throw exception testing: Column source and destination</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>sourceType</th>
+<th class='ex-header'>destinationType</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♥ A, ♦ A]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>COLUMN</td>
+<td class='ex-value'>COLUMN</td>
+<td class='ex-value'>99</td>
+<td class='ex-value'>Column source and destination</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1747921210'>
+<span>Valid input calling deckLevelChecks will not throw exception testing: Stack source and Column destination</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>sourceType</th>
+<th class='ex-header'>destinationType</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♥ A, ♦ A]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>COLUMN</td>
+<td class='ex-value'>COLUMN</td>
+<td class='ex-value'>99</td>
+<td class='ex-value'>Stack source and Column destination</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='1017207569'>
+<span>Calling deckLevelChecks with same source and destination will throw exception</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Given:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-246061117'>
+<span>Invalid input calling deckLevelChecks will throw exception with message: |You can't move a card from an empty deck| testing: Moving cards from empty deck should not be possible</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>You can't move a card from an empty deck</td>
+<td class='ex-value'>Moving cards from empty deck should not be possible</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='934029714'>
+<span>Invalid input calling deckLevelChecks will throw exception with message: |You can't move cards to the stock| testing: Moving cards to stock is not allowed</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♧ 2]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>888</td>
+<td class='ex-value'>You can't move cards to the stock</td>
+<td class='ex-value'>Moving cards to stock is not allowed</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-433841838'>
+<span>Invalid input calling deckLevelChecks will throw exception with message: |You can't move more than 1 card at a time to a Stack Pile| testing: Moving multiple cards is not allowed</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♧ 2, ♧ 4, ♧ 6]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>You can't move more than 1 card at a time to a Stack Pile</td>
+<td class='ex-value'>Moving multiple cards is not allowed</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='1337271653'>
+<span>Invalid input calling deckLevelChecks will throw exception with message: |You can't move an invisible card| testing: Moving invisible cards is not allowed</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testcase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♧ 2, ♧ 4, ♧ 6]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>You can't move an invisible card</td>
+<td class='ex-value'>Moving invisible cards is not allowed</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-588163515'>
+<span>valid input calling deckLevelChecks does not throw exceptions testing: Moving card from column to stack should be allowed</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♧ 2]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>1</td>
+<td class='ex-value'>Moving card from column to stack should be allowed</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1473637591'>
+<span>valid input calling deckLevelChecks does not throw exceptions testing: Moving card from column to column should be allowed</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♧ 2]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>Moving card from column to column should be allowed</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-422539479'>
+<span>valid input calling deckLevelChecks does not throw exceptions testing: Moving card from stock to column should be allowed</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>sourceDeck</th>
+<th class='ex-header'>destinationDeck</th>
+<th class='ex-header'>index</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♧ 2]</td>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>0</td>
+<td class='ex-value'>Moving card from stock to column should be allowed</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='726494156'>
+<span>Invalid input calling cardLevelCheck will throw exception with message Target deck is neither Stack nor Column. testing: Moving card to deck should only be allowed to Stack or column deck</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>DIAMONDS EIGHT</td>
+<td class='ex-value'>Target deck is neither Stack nor Column.</td>
+<td class='ex-value'>Moving card to deck should only be allowed to Stack or column deck</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='1545227933'>
+<span>Invalid input calling cardLevelCheck will throw exception with message An Ace has to be the first card of a Stack Pile testing: Moving card not being an ace to an empty stack</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>DIAMONDS TWO</td>
+<td class='ex-value'>An Ace has to be the first card of a Stack Pile</td>
+<td class='ex-value'>Moving card not being an ace to an empty stack</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-1650367749'>
+<span>Invalid input calling cardLevelCheck will throw exception with message Stack Piles hold same-suit cards of increasing Rank from Ace to King testing: Moving card to stack should be increasing</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♥ A]</td>
+<td class='ex-value'>HEARTS THREE</td>
+<td class='ex-value'>Stack Piles hold same-suit cards of increasing Rank from Ace to King</td>
+<td class='ex-value'>Moving card to stack should be increasing</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-778524425'>
+<span>Invalid input calling cardLevelCheck will throw exception with message Stack Piles can only contain same-suit cards testing: Moving card to stack should be same suit</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♥ A]</td>
+<td class='ex-value'>DIAMONDS TWO</td>
+<td class='ex-value'>Stack Piles can only contain same-suit cards</td>
+<td class='ex-value'>Moving card to stack should be same suit</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-1883947393'>
+<span>Invalid input calling cardLevelCheck will throw exception with message A King has to be the first card of a Column testing: Moving card to empty column can only be a King</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>DIAMONDS TWO</td>
+<td class='ex-value'>A King has to be the first card of a Column</td>
+<td class='ex-value'>Moving card to empty column can only be a King</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-846564044'>
+<span>Invalid input calling cardLevelCheck will throw exception with message Column cards have te alternate colors (red and black) testing: Moving card to column must be opposite suit</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♥ K]</td>
+<td class='ex-value'>DIAMONDS QUEEN</td>
+<td class='ex-value'>Column cards have te alternate colors (red and black)</td>
+<td class='ex-value'>Moving card to column must be opposite suit</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='2046670055'>
+<span>Invalid input calling cardLevelCheck will throw exception with message Columns hold alternating-color cards of decreasing rank from King to Two testing: Moving card to column must be in descending rank</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>exceptionMessage</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>[♥ K]</td>
+<td class='ex-value'>SPADES JACK</td>
+<td class='ex-value'>Columns hold alternating-color cards of decreasing rank from King to Two</td>
+<td class='ex-value'>Moving card to column must be in descending rank</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Expected exception of type &apos;nl.quintor.solitaire.game.moves.ex.MoveException&apos;, but no exception was thrown</pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='104029933'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : Ace should be allowed on empty stack</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>CLUBS ACE</td>
+<td class='ex-value'>Ace should be allowed on empty stack</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1813454412'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : two should be allowed in stack containing ace</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♦ A]</td>
+<td class='ex-value'>DIAMONDS TWO</td>
+<td class='ex-value'>two should be allowed in stack containing ace</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='2104431272'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : King should be allowed as first card in a column deck</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[]</td>
+<td class='ex-value'>DIAMONDS KING</td>
+<td class='ex-value'>King should be allowed as first card in a column deck</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-748145887'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with Diamond card should allow club card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♦ K]</td>
+<td class='ex-value'>CLUBS QUEEN</td>
+<td class='ex-value'>column deck with Diamond card should allow club card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1803715676'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with Diamond card should allow spade card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♦ K]</td>
+<td class='ex-value'>SPADES QUEEN</td>
+<td class='ex-value'>column deck with Diamond card should allow spade card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2119430215'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with hearts card should allow spade card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♥ K]</td>
+<td class='ex-value'>SPADES QUEEN</td>
+<td class='ex-value'>column deck with hearts card should allow spade card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1866708884'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with hearts card should allow club card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♥ K]</td>
+<td class='ex-value'>CLUBS QUEEN</td>
+<td class='ex-value'>column deck with hearts card should allow club card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-2070555181'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with clubs card should allow hearts card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♧ K]</td>
+<td class='ex-value'>HEARTS QUEEN</td>
+<td class='ex-value'>column deck with clubs card should allow hearts card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-853058964'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with clubs card should allow diamond card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♧ K]</td>
+<td class='ex-value'>DIAMONDS QUEEN</td>
+<td class='ex-value'>column deck with clubs card should allow diamond card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1620200837'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with spade card should allow hearts card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♤ K]</td>
+<td class='ex-value'>HEARTS QUEEN</td>
+<td class='ex-value'>column deck with spade card should allow hearts card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='223023812'>
+<span>Valid input calling cardLevelChecks will not throw exceptions testing : column deck with spade card should allow diamond card with decreased value of one</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>targetDeck</th>
+<th class='ex-header'>cardToAdd</th>
+<th class='ex-header'>testCase</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>[♤ K]</td>
+<td class='ex-value'>DIAMONDS QUEEN</td>
+<td class='ex-value'>column deck with spade card should allow diamond card with decreased value of one</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-1418442217'>
+<span>Given the cards DIAMONDS JACK, DIAMONDS FIVE the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>DIAMONDS JACK</td>
+<td class='ex-value'>DIAMONDS FIVE</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-1407416667'>
+<span>Given the cards DIAMONDS JACK, HEARTS FIVE the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>DIAMONDS JACK</td>
+<td class='ex-value'>HEARTS FIVE</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='2055444140'>
+<span>Given the cards DIAMONDS JACK, SPADES SEVEN the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>DIAMONDS JACK</td>
+<td class='ex-value'>SPADES SEVEN</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1586016058'>
+<span>Given the cards DIAMONDS JACK, CLUBS FIVE the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>DIAMONDS JACK</td>
+<td class='ex-value'>CLUBS FIVE</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-2027240489'>
+<span>Given the cards HEARTS TWO, HEARTS KING the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>HEARTS TWO</td>
+<td class='ex-value'>HEARTS KING</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='860853641'>
+<span>Given the cards HEARTS TWO, DIAMONDS KING the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>HEARTS TWO</td>
+<td class='ex-value'>DIAMONDS KING</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-988165319'>
+<span>Given the cards HEARTS TWO, SPADES KING the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>HEARTS TWO</td>
+<td class='ex-value'>SPADES KING</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-980826014'>
+<span>Given the cards HEARTS TWO, CLUBS KING the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>HEARTS TWO</td>
+<td class='ex-value'>CLUBS KING</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='1582329085'>
+<span>Given the cards CLUBS FIVE, CLUBS ACE the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>CLUBS FIVE</td>
+<td class='ex-value'>CLUBS ACE</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-346717924'>
+<span>Given the cards CLUBS FIVE, SPADES ACE the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>CLUBS FIVE</td>
+<td class='ex-value'>SPADES ACE</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-131897242'>
+<span>Given the cards CLUBS FIVE, DIAMONDS ACE the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>CLUBS FIVE</td>
+<td class='ex-value'>DIAMONDS ACE</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-682645196'>
+<span>Given the cards CLUBS FIVE, HEARTS ACE the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>CLUBS FIVE</td>
+<td class='ex-value'>HEARTS ACE</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='2104275999'>
+<span>Given the cards SPADES TEN, SPADES QUEEN the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>SPADES TEN</td>
+<td class='ex-value'>SPADES QUEEN</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description failure' id='-530127508'>
+<span>Given the cards SPADES TEN, CLUBS QUEEN the method opposingCards will return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-fail'>
+<td class='ex-value'>SPADES TEN</td>
+<td class='ex-value'>CLUBS QUEEN</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>FAIL</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='problem-description'>
+<div class='problem-header'>The following problems occurred:</div>
+<div class='problem-list'>
+<ul>
+<li>
+<pre>Condition not satisfied:<br/><br/>actualResult == expectedResult<br/>|            |  |<br/>true         |  false<br/>             false<br/></pre>
+</li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='471423811'>
+<span>Given the cards SPADES TEN, DIAMONDS QUEEN the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>SPADES TEN</td>
+<td class='ex-value'>DIAMONDS QUEEN</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='1116722705'>
+<span>Given the cards SPADES TEN, HEARTS QUEEN the method opposingCards will return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>cardLeft</th>
+<th class='ex-header'>cardRight</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>SPADES TEN</td>
+<td class='ex-value'>HEARTS QUEEN</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1904487444'>
+<span>Given SPADES TEN redSuit should return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>card</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>SPADES TEN</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-373762635'>
+<span>Given CLUBS TEN redSuit should return false</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>card</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>CLUBS TEN</td>
+<td class='ex-value'>false</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='339708564'>
+<span>Given DIAMONDS TEN redSuit should return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>card</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>DIAMONDS TEN</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1560151866'>
+<span>Given HEARTS TEN redSuit should return true</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Expect:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>card</th>
+<th class='ex-header'>expectedResult</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>HEARTS TEN</td>
+<td class='ex-value'>true</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='-1892586297'>
+<span>Given a JOKER JOKER_BLACK redSuit should throw a exception</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>joker</th>
+<th class='ex-header'>expectedMessage</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>JOKER JOKER_BLACK</td>
+<td class='ex-value'>Method redSuit() should not be used with Jokers</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan='10'>
+<div class='feature-description' id='832630069'>
+<span>Given a JOKER JOKER_RED redSuit should throw a exception</span>
+<span style='float: right; font-size: 60%;'>
+<a href='#toc'>Return</a>
+</span>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>When:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Then:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Where:</div>
+</td>
+<td>
+<div class='block-text'>----</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class='block-kind'>Examples:</div>
+</td>
+<td>
+<div class='spec-examples'>
+<table class='ex-table'>
+<thead>
+<th class='ex-header'>joker</th>
+<th class='ex-header'>expectedMessage</th>
+</thead>
+<tbody>
+<tr class='ex-pass'>
+<td class='ex-value'>JOKER JOKER_RED</td>
+<td class='ex-value'>Method redSuit() should not be used with Jokers</td>
+<td class='ex-result'>OK</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr></hr>
+<div class='footer'>Generated by <a href='https://github.com/renatoathaydes/spock-reports'>Athaydes Spock Reports</a></div>
+</body>
+</html>
