@@ -46,7 +46,7 @@ public class StringService implements IStringService{
         return handleInput(input).getReversed();
     }
 
-    private String ReverseHelper(String input){
+    public String ReverseHelper(String input){
         StringBuffer sbr = new StringBuffer(input);
         sbr.reverse();
         return sbr.toString();
