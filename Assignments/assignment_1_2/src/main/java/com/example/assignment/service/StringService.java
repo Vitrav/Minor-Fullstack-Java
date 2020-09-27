@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class StringService implements IStringService{
 
-    public static List<ReversedString> reversedStrings;
+    private static List<ReversedString> reversedStrings;
     public StringService() {
         reversedStrings = new ArrayList<>();
     }
@@ -32,12 +32,12 @@ public class StringService implements IStringService{
             return reversed;
         }
         else{
-            ReversedString result = this.reversedStrings.stream()
+           return  this.reversedStrings.stream()
                     .filter(o -> input.equals(o.getOriginal()))
                     .findAny()
                     .orElse(null);
 
-            return result;
+
         }
     }
 
